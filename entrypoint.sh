@@ -7,4 +7,5 @@ NETWORK_PORT=${NETWORK_PORT:-'30303'}
 /parity/parity --config /etc/mintnet/mintnet.toml \
     --jsonrpc-port=$JSONRPC_PORT \
     --port=$NETWORK_PORT \
-    --ws-port=$WEBSOCKETS_PORT
+    --ws-port=$WEBSOCKETS_PORT \
+    --unsafe-expose

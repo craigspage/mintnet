@@ -6,7 +6,7 @@ Repository for the client to join the [**MintNet**](https://stats.mintnet.settle
 [![Docker Automated build](https://img.shields.io/docker/automated/settlemint/mintnet.svg)](https://hub.docker.com/r/settlemint/mintnet/)
 [![Docker Build Status](https://img.shields.io/docker/build/settlemint/mintnet.svg)](https://hub.docker.com/r/settlemint/mintnet/)
 
-MintNet is an open, Proof-of-Authority, Ethereum network with 5 second block times and no gas costs. It is free to use, open to join, now go out andd BUIDL!
+MintNet is an open, Proof-of-Authority, Ethereum network with 5 second block times and no gas costs. It is free to use, open to join, now go out and BUIDL!
 
 ## About
 
@@ -84,4 +84,39 @@ Loading config file from /etc/mintnet/mintnet.toml
 2018-06-12 16:45:59 UTC Syncing  #102960 0xbe74…260f   757 blk/s  673 tx/s 322 Mgas/s      0+20994 Qed   #123953    3/25 peers      3 MiB chain   90 MiB db   40 MiB queue    8 MiB sync  RPC:  0 conn,  0 req/s,   0 µs
 2018-06-12 16:46:09 UTC Syncing  #109979 0x9cf0…c183   704 blk/s  506 tx/s 242 Mgas/s      0+26670 Qed   #136653    3/25 peers      5 MiB chain   91 MiB db   39 MiB queue    8 MiB sync  RPC:  0 conn,  0 req/s,   0 µs
 2018-06-12 16:46:19 UTC Syncing  #129293 0xc282…22a8  1935 blk/s    0 tx/s   0 Mgas/s      0+26027 Qed   #155322    3/25 peers      6 MiB chain   98 MiB db   38 MiB queue    8 MiB sync  RPC:  0 conn,  0 req/s,   0 µs
+```
+
+## Adding your node to the statistics interface
+
+The statistics interface is built on the [Ethereum Network Intelligence API](https://github.com/cubedro/eth-net-intelligence-api). Using the following Docker Compose file to run both your node and the statistics tool, your node will appear within seconds [in the interface](https://stats.mintnet.settlemint.com/).
+
+```yaml
+version: "3.3"
+
+services:
+  ethereum:
+    image: settlemint/mintnet:latest
+    ports:
+      - "8545:8545"
+      - "8546:8546"
+      - "30303:30303"
+      - "30303:30303/udp"
+  net-intelligence-api:
+    image: settlemint/eth-net-intelligence-api
+    environment:
+      CONTACT_DETAILS: i-support@mintnet.com
+      INSTANCE_NAME: My awesome Node (add a company name or location)
+      LISTENING_PORT: '30303'
+      RPC_HOST: ethereum
+      RPC_PORT: '8545'
+      WS_SECRET: settlemint
+      WS_SERVER: wss://stats.mintnet.settlemint.com
+    links:
+      - ethereum:ethereum
+```
+
+You can also clone this repo and run:
+
+```sh
+$ docker-compose up -d
 ```
