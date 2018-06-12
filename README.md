@@ -1,5 +1,3 @@
-# MintNet
-
 ![MintNet](./mintnet-logo.png)
 
 Repository for the client to join the [**MintNet**](https://stats.mintnet.settlemint.com/) Ethereum network.
