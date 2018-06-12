@@ -1,0 +1,121 @@
+{
+  "name": "MintNet",
+  "engine": {
+    "authorityRound": {
+      "params": {
+        "gasLimitBoundDivisor": "0x400",
+        "stepDuration": "5",
+        "maximumUncleCountTransition": 0,
+        "maximumUncleCount": 0,
+        "blockReward": "0xDE0B6B3A7640000",
+        "validators": {
+          "multi": {
+            "0": {
+              "list": [
+                "0x00e706c66844123e36caa65596cb0cee87e9148b",
+                "0x009b9dac6c1924a8b93116a4fa99f8c56c18b373"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "params": {
+    "gasLimitBoundDivisor": "0x400",
+    "maximumExtraDataSize": "0x20",
+    "minGasLimit": "0x1388",
+    "networkID": "0x2323",
+    "eip140Transition": "0x0",
+    "eip211Transition": "0x0",
+    "eip214Transition": "0x0",
+    "eip658Transition": "0x0"
+  },
+  "genesis": {
+    "seal": {
+      "authorityRound": {
+        "step": "0x0",
+        "signature":
+          "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "difficulty": "0x20000",
+    "gasLimit": "0x5F5E100"
+  },
+  "accounts": {
+    "0x0000000000000000000000000000000000000001": {
+      "balance": "1",
+      "builtin": {
+        "name": "ecrecover",
+        "pricing": { "linear": { "base": 3000, "word": 0 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000002": {
+      "balance": "1",
+      "builtin": {
+        "name": "sha256",
+        "pricing": { "linear": { "base": 60, "word": 12 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000003": {
+      "balance": "1",
+      "builtin": {
+        "name": "ripemd160",
+        "pricing": { "linear": { "base": 600, "word": 120 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000004": {
+      "balance": "1",
+      "builtin": {
+        "name": "identity",
+        "pricing": { "linear": { "base": 15, "word": 3 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000005": {
+      "builtin": {
+        "name": "modexp",
+        "activate_at": "0x0",
+        "pricing": { "modexp": { "divisor": 20 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000006": {
+      "builtin": {
+        "name": "alt_bn128_add",
+        "activate_at": "0x0",
+        "pricing": { "linear": { "base": 500, "word": 0 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000007": {
+      "builtin": {
+        "name": "alt_bn128_mul",
+        "activate_at": "0x0",
+        "pricing": { "linear": { "base": 40000, "word": 0 } }
+      }
+    },
+    "0x0000000000000000000000000000000000000008": {
+      "builtin": {
+        "name": "alt_bn128_pairing",
+        "activate_at": "0x0",
+        "pricing": { "alt_bn128_pairing": { "base": 100000, "pair": 80000 } }
+      }
+    },
+    "0x00e706c66844123e36caa65596cb0cee87e9148b": {
+      "balance": "1606938044258990275541962092341162602522202993782792835301376"
+    },
+    "0x009b9dac6c1924a8b93116a4fa99f8c56c18b373": {
+      "balance": "1606938044258990275541962092341162602522202993782792835301376"
+    },
+    "0x002be3076c9b8d304922b29639b9f486c8643af8": {
+      "balance": "1606938044258990275541962092341162602522202993782792835301376"
+    },
+    "0x0065c7c895af2f707c6cfaafca8d9cec6538e08f": {
+      "balance": "1606938044258990275541962092341162602522202993782792835301376"
+    }
+  },
+  "nodes": [
+    "enode://c249f47df56f86057edd1b8af93270a1f598ec621c834b74337ca83eec1f7c57fee16edaade99671872f21291879ccb52e07b0aec60212b4e9697928322a9a4a@167.99.37.140:30303",
+    "enode://7ffe9c16c0e19e0633fab661dbf7cb5171f5a5e07cbed95cccd07b5360a891df269cc29081ad3a4ed943af8efc666bb5cb1b0301b9446227817c3fbb8e2552f8@46.101.187.208:30303",
+    "enode://f76b000d21f2fb0fd74bd0c9c0980e0f9d40afaa7c06c37b542ab5e74856e62f8ad148d29f1424e613c701ab2e1c7d7307a5aaaa0a5d3ef7e0705c11b37d7144@167.99.37.130:30303",
+    "enode://21f8e0aaf5085fd5b76d4df49c1fc4e0dcd65ba979a4933f3c2f3e832f661c5183761d5aa098a985b0b29b6e4e4957a28cfff30bfd769648b3e4163ce0050c98@188.166.36.220:30303"
+  ]
+}

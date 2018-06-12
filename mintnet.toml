@@ -1,0 +1,6 @@
+[parity]
+chain = "/etc/mintnet/mintnet.json"
+base_path = "/mnt/io.parity.ethereum"
+
+[footprint]
+tracing = "on"
