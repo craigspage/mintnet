@@ -4,3 +4,6 @@ base_path = "/mnt/io.parity.ethereum"
 
 [footprint]
 tracing = "on"
+
+[dapps]
+disable = true
