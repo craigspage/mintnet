@@ -190,3 +190,9 @@ module.exports = {
   },
 }
 ```
+
+This will allow you to deploy to MintNet or any of the other networks with:
+
+```
+SEED="put your twelve word seed here of the account you want to use" truffle migrate --network mintnet 
+```
