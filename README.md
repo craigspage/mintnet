@@ -120,3 +120,73 @@ You can also clone this repo and run:
 ```sh
 $ docker-compose up -d
 ```
+
+## Using MintNet in Truffle
+
+Install truffle-hdwallet-provider by running `npm i truffle-hdwallet-provider` and use the truffle.js file below. All public and testnets are preconfigured including MintNet.
+
+```js
+const HDWalletProvider = require('truffle-hdwallet-provider')
+
+module.exports = {
+  solc: {
+    optimizer: {
+      enabled: true,
+      runs: 200,
+    },
+  },
+  networks: {
+   development: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*" // Match any network id
+    },
+    mintnet: {
+      provider: () => {
+        return new HDWalletProvider(
+          process.env.SEED,
+          'https://mintnet.settlemint.com'
+        )
+      },
+      gasPrice: 0x00,
+      network_id: '8995',
+    },
+    mainnet: {
+      provider: () => {
+        return new HDWalletProvider(
+          process.env.SEED,
+          'https://mainnet.infura.io/'
+        )
+      },
+      network_id: '1',
+    },
+    kovan: {
+      provider: () => {
+        return new HDWalletProvider(
+          process.env.SEED,
+          'https://kovan.infura.io/'
+        )
+      },
+      network_id: '42',
+    },
+    ropsten: {
+      provider: () => {
+        return new HDWalletProvider(
+          process.env.SEED,
+          'https://ropsten.infura.io/'
+        )
+      },
+      network_id: '3',
+    },
+    rinkeby: {
+      provider: () => {
+        return new HDWalletProvider(
+          process.env.SEED,
+          'https://rinkeby.infura.io/'
+        )
+      },
+      network_id: '4',
+    },
+  },
+}
+```
