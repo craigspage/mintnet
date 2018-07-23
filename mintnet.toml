@@ -2,5 +2,8 @@
 chain = "/etc/mintnet/mintnet.json"
 base_path = "/mnt/io.parity.ethereum"
 
+[rpc]
+cors = ['all']
+
 [footprint]
 tracing = "on"
