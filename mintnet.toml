@@ -7,3 +7,7 @@ cors = ['all']
 
 [footprint]
 tracing = "on"
+
+[misc]
+# Logging pattern (`<module>=<level>`, e.g. `own_tx=trace`).
+logging = "miner=trace,own_tx=trace,tx_queue=trace"
