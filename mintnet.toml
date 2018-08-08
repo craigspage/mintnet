@@ -2,8 +2,15 @@
 chain = "/etc/mintnet/mintnet.json"
 base_path = "/mnt/io.parity.ethereum"
 
+[websockets]
+hosts = ["all"]
+origins = ["all"]
+apis = ["web3", "eth", "net", "parity", "traces", "rpc", "signer", "personal", "parity_accounts", "parity_set"]
+
 [rpc]
-cors = ['all']
+cors = ["all"]
+apis = ["web3", "eth", "net", "parity", "traces", "rpc", "signer", "personal", "parity_accounts", "parity_set"]
+hosts = ["all"]
 
 [footprint]
 tracing = "on"
@@ -11,3 +18,6 @@ tracing = "on"
 [misc]
 # Logging pattern (`<module>=<level>`, e.g. `own_tx=trace`).
 logging = "own_tx=trace,txqueue=trace"
+
+[network]
+reserved_peers = "/etc/mintnet/reservedpeers.txt"

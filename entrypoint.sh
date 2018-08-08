@@ -10,5 +10,5 @@ NETWORK_PORT=${NETWORK_PORT:-'30303'}
     --jsonrpc-threads=8 \
     --port=$NETWORK_PORT \
     --ws-port=$WEBSOCKETS_PORT \
-    --unsafe-expose
+    --unsafe-expose \
     --reserved-only
