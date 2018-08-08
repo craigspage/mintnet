@@ -10,4 +10,4 @@ tracing = "on"
 
 [misc]
 # Logging pattern (`<module>=<level>`, e.g. `own_tx=trace`).
-logging = "own_tx=trace,tx_queue=trace"
+logging = "own_tx=trace,txqueue=trace"
