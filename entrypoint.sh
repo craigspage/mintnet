@@ -11,3 +11,4 @@ NETWORK_PORT=${NETWORK_PORT:-'30303'}
     --port=$NETWORK_PORT \
     --ws-port=$WEBSOCKETS_PORT \
     --unsafe-expose
+    --reserved-only
