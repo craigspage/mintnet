@@ -13,7 +13,7 @@ services:
     environment:
       CONTACT_DETAILS: i-support@mintnet.com
       INSTANCE_NAME: My awesome Node (add a company name or location)
-      LISTENING_PORT: '30303'
+      LISTENING_PORT: '30311'
       RPC_HOST: ethereum
       RPC_PORT: '8545'
       WS_SECRET: settlemint
