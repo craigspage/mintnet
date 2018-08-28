@@ -1,13 +1,13 @@
-version: "3.3"
+version: '3.3'
 
 services:
   ethereum:
     image: settlemint/mintnet:latest
     ports:
-      - "8545:8545"
-      - "8546:8546"
-      - "30303:30303"
-      - "30303:30303/udp"
+      - '8545:8545'
+      - '8546:8546'
+      - '30311:30311'
+      - '30311:30311/udp'
   net-intelligence-api:
     image: settlemint/eth-net-intelligence-api
     environment:
