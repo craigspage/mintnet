@@ -13,11 +13,16 @@ apis = ["web3", "eth", "net", "parity", "traces", "rpc", "signer", "personal", "
 hosts = ["all"]
 
 [footprint]
+# Enables Fat DB
+fat_db = "on"
+# Keep all state trie data. No pruning.
+pruning = "archive"
+# Compute and Store tracing data. (Enables trace_* APIs).
 tracing = "on"
 
-[misc]
-# Logging pattern (`<module>=<level>`, e.g. `own_tx=trace`).
-logging = "own_tx=trace,txqueue=trace"
+[dapps]
+disable = true
 
 [network]
+reserved_only = true
 reserved_peers = "/etc/mintnet/reservedpeers.txt"
