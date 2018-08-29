@@ -11,6 +11,4 @@ NETWORK_PORT=${NETWORK_PORT:-'30311'}
     --gasprice 0 \
     --jsonrpc-cors all \
     --ws-origins all \
-    --port=$NETWORK_PORT \
-    --ws-port=$WEBSOCKETS_PORT \
     --unsafe-expose
