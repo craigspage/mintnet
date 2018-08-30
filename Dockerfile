@@ -1,4 +1,4 @@
-FROM parity/parity:v1.11.6
+FROM parity/parity:v2.0.1
 
 RUN mkdir -p /mnt/io.parity.ethereum
 VOLUME ["/mnt/io.parity.ethereum"]
