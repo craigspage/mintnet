@@ -4,7 +4,7 @@ JSONRPC_PORT=${JSONRPC_PORT:-'8545'}
 WEBSOCKETS_PORT=${WEBSOCKETS_PORT:-'8546'}
 NETWORK_PORT=${NETWORK_PORT:-'30311'}
 
-if [ ! -d "/mnt/io.parity.ethereum/keys/" ]; then
+if [ ! -d "/mnt/io.parity.ethereum/keys/MintNet" ]; then
   /home/parity/bin/parity --config /etc/mintnet/mintnet.toml \
     --jsonrpc-port=$JSONRPC_PORT \
     --port=$NETWORK_PORT \
