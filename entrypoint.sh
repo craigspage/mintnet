@@ -18,7 +18,7 @@ if [ ! -d "/mnt/io.parity.ethereum/keys/" ]; then
   sleep 20s
 
   # Import the authority account from the passphrase
-  curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"personal_newAccount\",\"params\":[\"mintnet"],\"id\":0}" -H "Content-Type: application/json" -X POST 127.0.0.1:8545
+  curl --data "{\"jsonrpc\":\"2.0\",\"method\":\"personal_newAccount\",\"params\":[\"mintnet\"],\"id\":0}" -H "Content-Type: application/json" -X POST 127.0.0.1:8545
 
   kill $(ps ax | grep parity | grep -v grep | awk '{ print $1 }');
 
