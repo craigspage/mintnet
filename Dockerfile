@@ -2,6 +2,8 @@ FROM parity/parity:v2.1.6
 
 USER root
 
+RUN apt-get update && apt-get install curl -y
+
 RUN mkdir -p /mnt/io.parity.ethereum
 VOLUME ["/mnt/io.parity.ethereum"]
 
