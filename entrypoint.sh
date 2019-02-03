@@ -4,7 +4,7 @@ JSONRPC_PORT=${JSONRPC_PORT:-'8545'}
 WEBSOCKETS_PORT=${WEBSOCKETS_PORT:-'8546'}
 NETWORK_PORT=${NETWORK_PORT:-'30311'}
 
-/home/parity/bin/parity --config /etc/mintnet/mintnet.toml \
+/bin/parity --config /etc/mintnet/mintnet.toml \
     --jsonrpc-port=$JSONRPC_PORT \
     --port=$NETWORK_PORT \
     --ws-port=$WEBSOCKETS_PORT \
@@ -23,7 +23,7 @@ kill $(ps ax | grep parity | grep -v grep | awk '{ print $1 }');
 
 sleep 5s
 
-/home/parity/bin/parity --config /etc/mintnet/mintnet.toml \
+/bin/parity --config /etc/mintnet/mintnet.toml \
     --jsonrpc-port=$JSONRPC_PORT \
     --port=$NETWORK_PORT \
     --ws-port=$WEBSOCKETS_PORT \
