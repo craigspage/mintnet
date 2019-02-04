@@ -8,7 +8,7 @@ NETWORK_PORT=${NETWORK_PORT:-'30311'}
     --jsonrpc-port=$JSONRPC_PORT \
     --port=$NETWORK_PORT \
     --ws-port=$WEBSOCKETS_PORT \
-    --gasprice 0 \
+    --min-gasprice 0 \
     --jsonrpc-cors all \
     --ws-origins all \
     --unsafe-expose \
@@ -27,7 +27,7 @@ sleep 5s
     --jsonrpc-port=$JSONRPC_PORT \
     --port=$NETWORK_PORT \
     --ws-port=$WEBSOCKETS_PORT \
-    --gasprice 0 \
+    --min-gasprice 0 \
     --jsonrpc-cors all \
     --ws-origins all \
     --unsafe-expose
