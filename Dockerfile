@@ -1,4 +1,4 @@
-FROM parity/parity:beta
+FROM parity/parity:v2.3.2
 
 USER root
 
