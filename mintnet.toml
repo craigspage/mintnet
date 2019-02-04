@@ -16,9 +16,6 @@ hosts = ["all"]
 # Compute and Store tracing data. (Enables trace_* APIs).
 tracing = "on"
 
-[dapps]
-disable = true
-
 [network]
-reserved_only = true
+#reserved_only = true
 reserved_peers = "/etc/mintnet/reservedpeers.txt"
